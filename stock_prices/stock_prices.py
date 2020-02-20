@@ -6,11 +6,12 @@ import argparse
   
 def find_max_profit(prices): 
 
+  # Init max_profit_so_Far to a negative number
   max_profit_so_far = -999999999999999
   current_min_price_so_far = prices[0]
 
   for i in range(0, len(prices)):
-    
+
     if prices[i] < current_min_price_so_far:
       current_min_price_so_far = prices[i]
 
