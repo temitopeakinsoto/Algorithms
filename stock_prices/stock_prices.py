@@ -2,8 +2,29 @@
 
 import argparse
 
-def find_max_profit(prices):
-  pass
+
+  
+def find_max_profit(prices): 
+
+  max_profit_so_far = -999999999999999
+  current_min_price_so_far = prices[0]
+
+  for i in range(0, len(prices)):
+    
+    if prices[i] < current_min_price_so_far:
+      current_min_price_so_far = prices[i]
+
+    for j in range(i+1, len(prices)):
+
+      if prices[j] - prices[i] > max_profit_so_far:
+        max_profit_so_far = prices[j] - prices[i]
+        
+  return max_profit_so_far,current_min_price_so_far
+
+    
+print("-----------")
+print(find_max_profit([100, 90, 80, 50, 20, 10]))
+print(find_max_profit([1050, 270, 1540, 3800, 2]))
 
 
 if __name__ == '__main__':
